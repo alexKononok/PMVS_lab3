@@ -21,12 +21,15 @@ int main(int argc, char *argv[])
 	struct hostent *server;
 
 	char buffer[BUF_SIZE], filename[256];
+	//client, localhost, port number
 	if (argc < 3) 
 	{
 		fprintf(stderr,"usage %s hostname port\n", argv[0]);
 		exit(0);
 	}
 	portno = atoi(argv[2]);
+
+	//guaranteed delivery
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	if (sockfd < 0)
 		error("ERROR opening socket");
