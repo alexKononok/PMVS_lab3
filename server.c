@@ -78,9 +78,9 @@ void error(const char *msg)
 	exit(1);
 }
 
-/*It handles all communication once a connection has been established. 
+//It handles all communication once a connection has been established. 
  for each connection.  It handles all communication
- once a connnection has been established.*/
+ once a connnection has been established.
 void* dostuff(void *voidsockfd)
 {
 	int sockfd = *((int *)(voidsockfd));
