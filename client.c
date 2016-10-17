@@ -21,15 +21,12 @@ int main(int argc, char *argv[])
 	struct hostent *server;
 
 	char buffer[BUF_SIZE], filename[256];
-	//client, localhost, port number
 	if (argc < 3) 
 	{
 		fprintf(stderr,"usage %s hostname port\n", argv[0]);
 		exit(0);
 	}
 	portno = atoi(argv[2]);
-
-	//guaranteed delivery
 	sockfd = socket(AF_INET, SOCK_STREAM, 0);
 	if (sockfd < 0)
 		error("ERROR opening socket");
@@ -63,7 +60,6 @@ int main(int argc, char *argv[])
 		printf("File you want does not exist\n");
 		return 0;
 	}
-	//add 1 to the end of the downloaded file as the server and client in the same within a directory
 	filename[strlen(filename) - 1] = '1';
 	outfd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0666);
 	printf("Downloading file...\n");
