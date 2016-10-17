@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 		}
 		else
 			close(newsockfd);
-
+//if def = thread
 #else
 		{
 			pthread_t tid;
