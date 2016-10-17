@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
 		newsockfd = accept(sockfd, (struct sockaddr *) &cli_addr, &clilen);
 		if (newsockfd < 0)
 			error("ERROR on accept1");
+//if not def = process
 #ifndef THREAD 
 		pid = fork();
 		if (pid < 0)
@@ -59,6 +60,7 @@ int main(int argc, char *argv[])
 		}
 		else
 			close(newsockfd);
+
 #else
 		{
 			pthread_t tid;
