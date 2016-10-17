@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
 		printf("File you want does not exist\n");
 		return 0;
 	}
+	//add 1 to the end of the downloaded file as the server and client in the same within a directory
 	filename[strlen(filename) - 1] = '1';
 	outfd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0666);
 	printf("Downloading file...\n");
